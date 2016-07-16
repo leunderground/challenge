@@ -1,0 +1,34 @@
+<head>
+  <title>ssm-exercises</title>
+</head>
+
+<body>
+  <h1>safe2choose Systems and Security Manager</h1>
+  <h2>Technical Exercise 1</h2>
+
+  {{> loginButtons}}
+  {{> hello}}
+  {{> info}}
+</body>
+
+<template name="hello">
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times. This has been stored to our secure servers.</p>
+</template>
+
+<template name="info">
+  <p>To contact us, use the PGP keys below</p>
+  <ul>
+    <li><a href="tech_at_safe2choose.asc" target="_blank">
+      tech@safe2choose.org
+    </a></li>
+
+    <li><a href="test_at_safe2choose.asc" target="_blank">
+      test@safe2choose.org
+    </a></li>
+
+    <li><a href="other_at_safe2choose.asc" target="_blank">
+      other@safe2choose.org
+    </a></li>
+  </ul>
+</template>
