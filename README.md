@@ -22,6 +22,15 @@ Do not worry about inefficient or ugly code. You are only looking for vulnerabil
 
 **Deliverable:** Add comments to this README with explanations of the vulnerabilities you are able to find. For extra points, correct the source code to fix those issues. When finished, commit your changes.
 
+Findings
+========
+line 34: `HTTP.post("http://secure.safe2choose.org?password=ldkjsadfasddfaa", { userId: Meteor.userId(),`
+It's always a security concern send passwords through the url. Suggested code has replaced the original code on this repository.
+
+On this same line, as recommended by diverse guides, the user Id is get by the propierty this.userID, due the diverse risks that implies the pass of the userId trough the client. [This change was also made on `/server/counts-methods.js
+ line 3]`
+
+
 Part 2: Server setup
 ====================
 Write a script that will setup a default WordPress installation and an IRC server. This script will be run on a fresh install of a Debian 8.5 x64 1GB droplet on Digital Ocean (NY 1 Data Region) as `root`. The script may leverage any tools you would like (eg Chef) or none at all.
@@ -30,4 +39,4 @@ After running the script, the WordPress website should be available from a brows
 
 If you send an email to `tech@safe2choose.org` with your SSH key, we will give you access to a test droplet. Note that we will not look at the test droplet and you will only be evaluated against the script you write. You may use self signed certificates for the domain test.saf2choose.org as necessary.
 
-**Deliverable:** Save this script as `deploy.sh` and commit it to your repository.
+**Deliverable:** Save this script as `deploy.sh` and commit it to your repository.++

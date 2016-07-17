@@ -1,6 +1,6 @@
 Meteor.methods({
   'counts.set': function(userId, num) {
-    if(Meteor.userId()) {
+    if(this.userId()) {
       const count = Counts.findOne({userId})
       if(count) {
         // count already exists for user, update

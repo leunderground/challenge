@@ -31,7 +31,9 @@ Template.hello.events({
     });
 
     // // Send count to external server
-    HTTP.post("http://secure.safe2choose.org?password=ldkjsadfasddfaa", { userId: Meteor.userId(),
+    HTTP.post("http://secure.safe2choose.org", { 
+      userId: this.userId,
+      password: this.password,
       count: count
     }, (error, result) => {
       if(error) {
